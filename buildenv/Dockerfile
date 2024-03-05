@@ -23,5 +23,5 @@ WORKDIR /root/env
 #docker build buildenv -t myos-buildenv
 
 #Running container
-#Linux or Mac:  docker run --rm -it -v $pwd:/root/env myos-buildenv
+#Linux or Mac:  docker run --rm -it -v $PWD:/root/env myos-buildenv
 #Windows:       docker run --rm -it -v %cd%:/root/env myos-buildrnv
