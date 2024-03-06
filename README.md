@@ -1,5 +1,7 @@
 # OS-Kernel
 
+Based on https://github.com/davidcallanan/os-series
+
 Building environment (in terminal)
 docker build buildenv -t myos-buildenv
 
