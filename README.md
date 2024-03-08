@@ -1,7 +1,8 @@
 # OS-Kernel
 
 Building environment (in terminal)
-docker build buildenv -t myos-buildenv
+Linux:          sudo docker build buildenv -t myos-buildenv
+Windows:        docker build buildenv -t myos-buildenv
 
 Running container
 Linux or Mac:  sudo docker run --rm -it -v $PWD:/root/env myos-buildenv
