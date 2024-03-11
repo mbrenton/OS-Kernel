@@ -12,9 +12,7 @@ long_mode_start:
     mov fs, ax
     mov gs, ax
 
-    ; print `OK`
-    ; Write to video memory, cpu hooks text up to screen
-    ; Move data into video memory
+    ; calling kernel_main
     ; halt, cpu will freeze and not run any further
 	call kernel_main
 
