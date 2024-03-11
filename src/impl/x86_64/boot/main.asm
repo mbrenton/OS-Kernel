@@ -69,18 +69,21 @@ check_cpuid:
 
 check_long_mode:
     ; Magic number
-    mov eax, 0x80000000
-    cpuid
-    cmp eax, 0x80000001
+    mov eax, 0x80000000 ; move into eax register
+    cpuid ; cpuid takes eax register as an implicent argument
+    cmp eax, 0x80000001 ; compare eax register +1
+    ; if longer, long mode is not supported, jump to long mode label
     jb .no_long_mode
 
+    ; otherwise, check if long mode is avaiable.
     mov eax, 0x80000001
-    cpuid
-    test edx, 1 << 29
-    jz .no_long_mode
+    cpuid ; cpuid instruction
+    test edx, 1 << 29 ; test is lm bit is set, it is at bit 29
+    jz .no_long_mode ; jump to long mode if not set
 
     ret
 .no_long_mode:
+    ; if no long mode, print an error, jump to error instructions
     mov al, "L"
     jmp error
 
